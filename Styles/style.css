@@ -1,4 +1,56 @@
-/*body {
+body {
 
-    background-color:  blue;
-}*/
+text-align: center;
+background: url(../Images/retro-beach.jpg) no-repeat center center fixed;
+}
+
+ul li {
+
+ list-style-image: url('../Images/cute-cookie-resized.png');
+ font-family: "Times New Roman";
+ font-size: 30px;
+ margin: 1px;  
+ padding: 1px; 
+ background-color: rgba(223, 33, 204, 0.2);
+font-weight: bold;
+
+}
+
+header {
+
+    height: 40px;
+    background: coral;
+    text-align: left;
+
+}
+
+header li {
+
+    list-style-image: none;
+    display: inline;
+    margin: 10px;
+}
+
+a {
+    text-decoration: none;
+    background: rgba (255,235,205,0.3);
+    color: yellowgreen;
+    font-family: "Stick";
+    font-weight: bold;
+}
+
+footer {
+
+    background: coral;
+    height: 25px;
+    font-family: "Stick";
+    
+
+}
+
+h1,h2 {
+
+    font-family: "Stick";
+    font-size: 50px;
+
+}
