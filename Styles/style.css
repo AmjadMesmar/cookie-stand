@@ -60,3 +60,10 @@ h1,h2 {
 padding: 100px;
 
 }
+
+th,td{
+
+    border: black solid 1px;
+    color: whitesmoke;
+    background-color: rgba(223, 33, 204, 0.4);
+}
