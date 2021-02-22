@@ -1,23 +1,25 @@
 'use strict';
+let dayHours = ['06:00 am', '07:00 am', '08:00 am', '09:00 am', '10:00 am', '11:00 am', '12:00 pm', '01:00 pm', '02:00 pm', '03:00 pm', '04:00 pm', '05:00 pm', '06:00 pm', '07:00 pm'];
 
 const seatle = {
 
   cityName: 'Seatle',
-  customers: 0,
-  minCustomers:23,
-  maxCustomers:65,
+  customers: [],
+  minCustomers: 23,
+  maxCustomers: 65,
   avgCookiesSale: 6.3,
-  cookiesNumber:0,
-  totalCookies:0,
-  dayHours: ['06:00 am','07:00 am','08:00 am','09:00 am','10:00 am','11:00 am','12:00 pm','01:00 pm','02:00 pm','03:00 pm','04:00 pm','05:00 pm','06:00 pm','07:00 pm'],
+  cookiesNumber: [],
+  totalCookies: 0,
 
-  customersNumber: function (min,max) {
-    this.customers = generateRandomNumber(min, max);
-  },
+  customersNumber: function (min, max) {
 
-  hourlyCookies: function (randomNumber,multiplyNumber) {
+    for (let i = 0; i < dayHours.length; i++) {
+      let randomCustomers = generateRandomNumber(min, max);
+      this.customers.push(randomCustomers);
 
-    this.cookiesNumber = calculateCookiesNumber(randomNumber,multiplyNumber);
+      let cookiesHourly = Math.ceil(randomCustomers * this.avgCookiesSale);
+      this.cookiesNumber.push(cookiesHourly);
+    }
   }
 
 };
@@ -25,84 +27,89 @@ const seatle = {
 const tokyo = {
 
   cityName: 'Tokyo',
-  customers: 0,
-  minCustomers:3,
-  maxCustomers:24,
+  customers: [],
+  minCustomers: 3,
+  maxCustomers: 24,
   avgCookiesSale: 1.2,
-  cookiesNumber:0,
-  totalCookies:0,
-  dayHours: ['06:00 am','07:00 am','08:00 am','09:00 am','10:00 am','11:00 am','12:00 pm','01:00 pm','02:00 pm','03:00 pm','04:00 pm','05:00 pm','06:00 pm','07:00 pm'],
+  cookiesNumber: [],
+  totalCookies: 0,
 
-  customersNumber: function (min,max) {
-    this.customers = generateRandomNumber(min, max);
-  },
+  customersNumber: function (min, max) {
 
-  hourlyCookies: function (randomNumber,multiplyNumber) {
+    for (let i = 0; i < dayHours.length; i++) {
+      let randomCustomers = generateRandomNumber(min, max);
+      this.customers.push(randomCustomers);
 
-    this.cookiesNumber = calculateCookiesNumber(randomNumber,multiplyNumber);
+      let cookiesHourly = Math.ceil(randomCustomers * this.avgCookiesSale);
+      this.cookiesNumber.push(cookiesHourly);
+    }
   }
 };
 
 const dubai = {
 
   cityName: 'Dubai',
-  customers: 0,
-  minCustomers:11,
-  maxCustomers:38,
+  customers: [],
+  minCustomers: 11,
+  maxCustomers: 38,
   avgCookiesSale: 3.7,
-  cookiesNumber:0,
-  totalCookies:0,
-  dayHours: ['06:00 am','07:00 am','08:00 am','09:00 am','10:00 am','11:00 am','12:00 pm','01:00 pm','02:00 pm','03:00 pm','04:00 pm','05:00 pm','06:00 pm','07:00 pm'],
+  cookiesNumber: [],
+  totalCookies: 0,
 
-  customersNumber: function (min,max) {
-    this.customers = generateRandomNumber(min, max);
-  },
+  customersNumber: function (min, max) {
 
-  hourlyCookies: function (randomNumber,multiplyNumber) {
+    for (let i = 0; i < dayHours.length; i++) {
+      let randomCustomers = generateRandomNumber(min, max);
+      this.customers.push(randomCustomers);
 
-    this.cookiesNumber = calculateCookiesNumber(randomNumber,multiplyNumber);
+      let cookiesHourly = Math.ceil(randomCustomers * this.avgCookiesSale);
+      this.cookiesNumber.push(cookiesHourly);
+    }
   }
+
 };
 
 const paris = {
 
   cityName: 'Paris',
-  customers: 0,
-  minCustomers:20,
-  maxCustomers:38,
+  customers: [],
+  minCustomers: 20,
+  maxCustomers: 38,
   avgCookiesSale: 2.3,
-  cookiesNumber:0,
-  totalCookies:0,
-  dayHours: ['06:00 am','07:00 am','08:00 am','09:00 am','10:00 am','11:00 am','12:00 pm','01:00 pm','02:00 pm','03:00 pm','04:00 pm','05:00 pm','06:00 pm','07:00 pm'],
+  cookiesNumber: [],
+  totalCookies: 0,
 
-  customersNumber: function (min,max) {
-    this.customers = generateRandomNumber(min, max);
-  },
+  customersNumber: function (min, max) {
 
-  hourlyCookies: function (randomNumber,multiplyNumber) {
+    for (let i = 0; i < dayHours.length; i++) {
+      let randomCustomers = generateRandomNumber(min, max);
+      this.customers.push(randomCustomers);
 
-    this.cookiesNumber = calculateCookiesNumber(randomNumber,multiplyNumber);
+      let cookiesHourly = Math.ceil(randomCustomers * this.avgCookiesSale);
+      this.cookiesNumber.push(cookiesHourly);
+    }
   }
 };
 
 const lima = {
 
   cityName: 'Lima',
-  customers: 0,
-  minCustomers:2,
-  maxCustomers:16,
+  customers: [],
+  minCustomers: 2,
+  maxCustomers: 16,
   avgCookiesSale: 4.6,
-  cookiesNumber:0,
-  totalCookies:0,
-  dayHours: ['06:00 am','07:00 am','08:00 am','09:00 am','10:00 am','11:00 am','12:00 pm','01:00 pm','02:00 pm','03:00 pm','04:00 pm','05:00 pm','06:00 pm','07:00 pm'],
+  cookiesNumber: [],
+  totalCookies: 0,
 
-  customersNumber: function (min,max) {
-    this.customers = generateRandomNumber(min, max);
-  },
+  customersNumber: function (min, max) {
 
-  hourlyCookies: function (randomNumber,multiplyNumber) {
+    for (let i = 0; i < dayHours.length; i++) {
+      let randomCustomers = generateRandomNumber(min, max);
+      this.customers.push(randomCustomers);
 
-    this.cookiesNumber = calculateCookiesNumber(randomNumber,multiplyNumber);
+      let cookiesHourly = Math.ceil(randomCustomers * this.avgCookiesSale);
+      this.cookiesNumber.push(cookiesHourly);
+    }
   }
 };
 
@@ -110,15 +117,7 @@ function generateRandomNumber(min, max) {
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-
-function calculateCookiesNumber (randomNumber,multiplyNumber){
-
-  randomNumber = randomNumber*multiplyNumber;
-  return Math.ceil(randomNumber);
-}
-
-
-function renderObjects(objectName){
+function renderObjects(objectName) {
 
   const parentElement = document.getElementById('Salamon Cookies');
 
@@ -133,18 +132,19 @@ function renderObjects(objectName){
   articleElement.appendChild(h2Element);
   h2Element.textContent = objectName.cityName;
 
+
   const ulElement = document.createElement('ul');
   articleElement.appendChild(ulElement);
 
-  for(let i = 0; i < objectName.dayHours.length; i++) {
+  for (let i = 0; i < dayHours.length; i++) {
+
     const liElement = document.createElement('li');
     ulElement.appendChild(liElement);
-    objectName.customersNumber(objectName.minCustomers,objectName.maxCustomers);
-    objectName.hourlyCookies(objectName.customers,objectName.avgCookiesSale);
-    liElement.textContent = `${objectName.dayHours[i]}: ${objectName.cookiesNumber} cookies.`;
-    objectName.totalCookies = objectName.totalCookies + objectName.cookiesNumber;
-    objectName.customers = 0;
-    objectName.cookiesNumber = 0;
+
+    objectName.customersNumber(objectName.minCustomers, objectName.maxCustomers);
+    liElement.textContent = `${dayHours[i]}: ${objectName.cookiesNumber[i]} cookies.`;
+
+    objectName.totalCookies = objectName.totalCookies + objectName.cookiesNumber[i];
   }
   const liElement = document.createElement('li');
   ulElement.appendChild(liElement);
