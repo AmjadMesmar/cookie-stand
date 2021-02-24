@@ -120,6 +120,7 @@ function tableFooter() {
 }
 
 
+
 tableHeader();
 const seatle = new City('Seatle', [], 23, 65, 6.3, [], 0);
 const tokyo = new City('Tokyo', [], 3, 24, 1.2, [], 0);
@@ -135,3 +136,5 @@ lima.renderCityTable();
 
 tableFooter();
 console.log(hourlyTotal);
+
+// New pull request.
