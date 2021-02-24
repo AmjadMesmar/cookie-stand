@@ -4,23 +4,22 @@ let dayHours = ['06:00 am', '07:00 am', '08:00 am', '09:00 am', '10:00 am', '11:
 const parentElement = document.getElementById('Salamon Cookies');
 
 let tableElement;
-let hourlyTotal =[];
+let hourlyTotal = [];
 let allTotal = [];
 
-for (let i =0; i < dayHours.length; i++){
+for (let i = 0; i < dayHours.length; i++) {
   hourlyTotal[i] = 0;
 }
 
-function City(cityName, customers, minCustomers, maxCustomers, avgCookiesSale, cookiesNumber, totalCookies) {
+function City(cityName, minCustomers, maxCustomers, avgCookiesSale) {
 
   this.cityName = cityName;
-  this.customers = customers;
+  this.customers = [];
   this.minCustomers = minCustomers;
   this.maxCustomers = maxCustomers;
   this.avgCookiesSale = avgCookiesSale;
-  this.cookiesNumber = cookiesNumber;
-  this.totalCookies = totalCookies;
-
+  this.cookiesNumber = [];
+  this.totalCookies = 0;
 
 }
 
@@ -56,6 +55,7 @@ City.prototype.renderCityTable = function () {
     hourlyTotal[i] += this.cookiesNumber[i];
 
   }
+
   const TotalTdElement = document.createElement('td');
   trElement.appendChild(TotalTdElement);
   TotalTdElement.textContent = `${this.totalCookies}`;
@@ -95,6 +95,8 @@ function tableFooter() {
 
   const tfootElement = document.createElement('tfoot');
   tableElement.appendChild(tfootElement);
+  tfootElement.id ='oldFooter';
+
 
   const trElement = document.createElement('tr');
   tfootElement.appendChild(trElement);
@@ -120,12 +122,38 @@ function tableFooter() {
 }
 
 
+const formElement = document.getElementById('addNewCityForm');
+// console.log(formElement);
+
+formElement.addEventListener('submit', function(event) {
+  event.preventDefault();
+  // console.log(event.target.catName.value);
+
+  const cityName = event.target.cityName.value;
+  const customerMin = event.target.customerMin.value;
+  const customerMax = event.target.customerMax.value;
+  const avg = event.target.salesAvg.value;
+
+  const city = new City(cityName, customerMin, customerMax,avg);
+
+  formElement.reset();
+
+  city.renderCityTable();
+  let deleteOldFooter = document.getElementById('oldFooter');
+  deleteOldFooter.parentNode.removeChild(deleteOldFooter);
+  tableFooter();
+  console.log(hourlyTotal);
+
+
+});
+
+
 tableHeader();
-const seatle = new City('Seatle', [], 23, 65, 6.3, [], 0);
-const tokyo = new City('Tokyo', [], 3, 24, 1.2, [], 0);
-const dubai = new City('Dubai', [], 11, 38, 3.7, [], 0);
-const paris = new City('Paris', [], 20, 38, 2.3, [], 0);
-const lima = new City('Lima', [], 2, 16, 4.6, [], 0);
+const seatle = new City('Seatle', 23, 65, 6.3, 0);
+const tokyo = new City('Tokyo', 3, 24, 1.2, 0);
+const dubai = new City('Dubai', 11, 38, 3.7, 0);
+const paris = new City('Paris', 20, 38, 2.3, 0);
+const lima = new City('Lima', 2, 16, 4.6, 0);
 
 seatle.renderCityTable();
 tokyo.renderCityTable();
@@ -135,3 +163,4 @@ lima.renderCityTable();
 
 tableFooter();
 console.log(hourlyTotal);
+

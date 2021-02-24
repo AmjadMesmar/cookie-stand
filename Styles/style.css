@@ -2,12 +2,15 @@ body {
 
 text-align: center;
 background: url(../Images/retro-beach.jpg) no-repeat center center fixed;
+font-family: "Stick";
+color: whitesmoke;
+
+
 }
 
 ul li {
 
  list-style:square;
- font-family: "Times New Roman";
  font-size: 20px; 
  font-weight: bold;
 }
@@ -48,9 +51,7 @@ a {
 footer {
 
     background: coral;
-    height: 25px;
-    font-family: "Stick";
-    
+    height: 25px;    
 
 }
 
@@ -72,4 +73,44 @@ th,td{
     border: black solid 1px;
     color: whitesmoke;
     background-color: rgba(223, 33, 204, 0.4);
+    padding: 5px;
+}
+
+table{
+
+    margin: 20px 20px 300px 20px;
+}
+
+fieldset {
+
+    border: blueviolet solid 2px;
+    padding: 10px;
+    margin: 20px;
+    display : flex; align-items: center
+}
+
+fieldset legend {
+
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+fieldset button {
+
+    height: 38px;
+    
+}
+
+fieldset input {
+
+    margin-right: 20px;
+    height: 38px;
+
+}
+
+fieldset label {
+
+    margin-right: 5px;
+    padding-bottom: 4px;
+    border: dotted black 2px;
 }
