@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../Styles/reset.css">
     <link rel="stylesheet" type="text/css" href="../Styles/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stick">    
     <title>Sales</title>
@@ -18,6 +19,27 @@
 </header>
     <h1>Sales</h1>
     <br>
+
+    <form id="addNewCityForm">
+        <fieldset>
+        <legend> Add a new city</legend>
+
+        <label for="cityName">City name:</label>
+        <input required="required" type="text" id="cityName" size="10" maxlength="10" placeholder="City name" name="city_name">
+
+        <label for="customerMin">Minimum customers:</label>
+        <input required="required" max="500" type="number" id="customerMin" size="3" maxlength="3" placeholder="Minimum" name="customer_min">
+
+        <label for="customerMax">Maximum customers:</label>
+        <input required="required" max="500" type="number" id="customerMax" size="3" maxlength="3" placeholder="Maximum" name="customer_max">
+
+        <label for="salesAvg">Average of sales:</label>
+        <input required="required" max="100" type="number" id="salesAvg" size="3" maxlength="3" placeholder="Average" name="sales_avg">
+
+        <button type="submit">Save city information</button>
+
+        </fieldset>
+    </form>
     <div id="Salamon Cookies">
 
     </div>
